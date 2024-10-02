@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sequence Analysis</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='ana_style.css') }}">
+</head>
+<body>
+
+    <h1>Bioinformatics Sequence Analysis</h1>
+    
+    <form action="{{ url_for('pipeline.analyze') }}" method="POST">
+        <!-- Analysis Type -->
+        <div class="form-group">
+            <label for="analysis_type">Select Analysis Type</label>
+            <select name="analysis_type" id="analysis_type" required>
+                <option value="jukes_cantor">Jukes-Cantor Distance</option>
+                <option value="kimura_2p">Kimura 2-Parameter</option>
+                <option value="tamura_3p">Tamura 3-Parameter</option>
+                <option value="p_distance">p-Distance</option>
+            </select>
+        </div>
+
+        <!-- Gap Deletion Option -->
+        <div class="form-group">
+            <label for="gap_deletion">
+                Delete Missing Data Sites (Gap Deletion)
+                <input type="checkbox" name="gap_deletion" id="gap_deletion" checked> 
+                
+            </label>
+        </div>
+
+        <!-- Graph Type -->
+        <div class="form-group">
+            <label for="graph_type">Select Graph Type</label>
+            <select name="graph_type" id="graph_type" required>
+                <option value="heatmap">Heatmap</option>
+                <option value="dendrogram">Dendrogram</option>
+                <option value="amino_a_comp">Amino Acid Composition Plot</option>
+                <option value="snpeek">SNPeek</option>
+                <option value="frequency">Frequency Plot</option>
+            </select>
+        </div>
+
+        <!-- Submit Button -->
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">Run Analysis</button>
+        </div>
+    </form>
+
+</body>
+</html>

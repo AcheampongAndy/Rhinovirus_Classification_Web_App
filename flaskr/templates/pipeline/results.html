@@ -1,0 +1,39 @@
+{% extends "pipeline/analyze.html" %}
+
+{% block content %}
+<div class="results-container">
+    <h2>Analysis Results</h2>
+
+    <!-- Display the results matrix -->
+    <h3>Results Matrix</h3>
+    <table class="results-table">
+        <thead>
+            <tr>
+                {% for col in results[0] %}
+                    <th>{{ col }}</th>
+                {% endfor %}
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in results[1:] %}
+                <tr>
+                    {% for cell in row %}
+                        <td>{{ cell }}</td>
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <!-- Display the generated graph -->
+    <div class="graph-section">
+        <h3>Graph</h3>
+        <img src="{{ plot_url }}" alt="Analysis Graph">
+    </div>
+
+    <!-- Back to Analysis Page -->
+    <div class="back-link">
+        <a href="{{ url_for('pipeline.analyze') }}" class="btn btn-secondary">Back to Analysis</a>
+    </div>
+</div>
+{% endblock %}

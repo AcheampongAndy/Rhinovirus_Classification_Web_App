@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{% block title %}{% endblock %} - RhinoGen</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    </head>
+    <body>
+        <!-- Navigation Bar-->
+         <nav>
+            <h1>RhinoGen</h1>
+            <ul>
+                {% if g.user %}
+                <!-- User is logged in, show username and logout options-->
+                 <li><span>Welcome, {{ g.user['username'] }}!</span></li>
+                 <li><a href="{{ url_for('auth.logout') }}">Log Out</a></li>
+                {% else %}
+                <!-- User is not logged in, show register and login options -->
+                 <li><a href="{{ url_for('auth.register') }}">Register</a></li>
+                 <li><a href="{{ url_for('auth.login') }}">Log In</a></li>
+                {% endif %}
+            </ul>
+         </nav>
+
+         <!-- Main content section -->
+          <section class="content">
+            <header>
+                <!-- Dynamic hearder content can be added here -->
+                 {% block header %}{% endblock %}
+            </header>
+
+            <!-- Flash massages for displaying alert or notifications-->
+             {% for massage in get_flashed_messages() %}
+             <div class="flash">{{ massage }}</div>
+             {% endfor %}
+
+             <!-- Dynamic page content will be inserted here -->
+              {% block content %}{% endblock %}
+          </section>
+    </body>
+</html>
