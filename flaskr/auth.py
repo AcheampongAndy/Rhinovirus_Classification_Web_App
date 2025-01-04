@@ -99,7 +99,7 @@ def login_required(view):
 def dashboard():
     db = get_db()
     uploads = db.execute(
-        'SELECT file_name, created_at FROM UploadedFile WHERE user_id = ? ORDER BY created_at DESC',
+        'SELECT file_name, created_at, file_id FROM UploadedFile WHERE user_id = ? ORDER BY created_at DESC',
         (g.user['user_id'],)
     ).fetchall()
     return render_template('auth/dashboard.html', uploads=uploads)

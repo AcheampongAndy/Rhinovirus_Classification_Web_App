@@ -40,8 +40,8 @@
                             <td>{{ upload.created_at }}</td>
                             <td>
                                 <!-- Placeholder for actions -->
-                                 <a href="#" class="btn btn-secondary btn-sm">View</a>
-                                 <a href="{{ url_for('pipeline.analyze') }}" class="btn btn-info btn-sm">Analyze</a>
+                                 <a href="{{ url_for('pipeline.view_results', upload_id=upload.file_id) }}" class="btn btn-secondary btn-sm">View</a>
+                                 <a href="{{ url_for('pipeline.redo_analysis', upload_id=upload.file_id) }}" class="btn btn-info btn-sm">Analyze</a>
                             </td>
                         </tr>
                         {% endfor %}

@@ -1,6 +1,6 @@
 import os
 
-from flask import Flask
+from flask import Flask, render_template
 
 def create_app(test_config=None):
     # Create and configure the app
@@ -23,10 +23,10 @@ def create_app(test_config=None):
     except OSError:
         pass
 
-    # a simple page that say hello
+    # Home Page
     @app.route('/')
-    def hello():
-        return 'Hello Page'
+    def base():
+        return render_template('dashboard.html')
     
     from . import db
     db.init_app(app)
@@ -36,6 +36,6 @@ def create_app(test_config=None):
 
     from . import pipeline
     app.register_blueprint(pipeline.bp)
-    app.add_url_rule('/', endpoint='dashboard')
+    
     
     return app

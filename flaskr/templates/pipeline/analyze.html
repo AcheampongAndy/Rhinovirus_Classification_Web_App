@@ -38,9 +38,9 @@
             <select name="graph_type" id="graph_type" required>
                 <option value="heatmap">Heatmap</option>
                 <option value="dendrogram">Dendrogram</option>
-                <option value="amino_a_comp">Amino Acid Composition Plot</option>
+                <!--option value="amino_a_comp">Amino Acid Composition Plot</option-->
                 <option value="snpeek">SNPeek</option>
-                <option value="frequency">Frequency Plot</option>
+                <!--option value="frequency">Frequency Plot</option-->
             </select>
         </div>
 
@@ -49,6 +49,11 @@
             <button type="submit" class="btn btn-primary">Run Analysis</button>
         </div>
     </form>
+
+    <!-- Button to go to Base Page -->
+    <div class="form-group">
+        <a href="{{ url_for('auth.dashboard') }}" class="btn btn-secondary">Go to Home Page</a>
+    </div>
 
 </body>
 </html>
