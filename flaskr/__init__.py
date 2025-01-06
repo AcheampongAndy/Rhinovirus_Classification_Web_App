@@ -26,7 +26,7 @@ def create_app(test_config=None):
     # Home Page
     @app.route('/')
     def base():
-        return render_template('dashboard.html')
+        return render_template('base.html')
     
     from . import db
     db.init_app(app)
