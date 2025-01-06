@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Welcome to RhinoGen</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='back_style.css') }}">
+    </head>
+    <body>
+        <!-- Navigation Bar -->
+        <nav>
+            <h1>RhinoGen</h1>
+            <ul>
+                <li><a href="{{ url_for('auth.register') }}">Register</a></li>
+                <li><a href="{{ url_for('auth.login') }}">Log In</a></li>
+            </ul>
+        </nav>
+
+        <!-- Main content section -->
+        <section class="content">
+            <header>
+                <h1>Welcome to RhinoGen</h1>
+            </header>
+
+            <!-- Welcome Section -->
+            <div class="welcome-section">
+                <h2>Analyze Rhinovirus Sequences with Ease</h2>
+                <p>RhinoGen allows you to upload, analyze, and visualize Rhinovirus sequence data effortlessly.</p>
+                
+                    <p>If you already have an account, log in to access the analysis tools. If you're new, create an account to get started!</p>
+                    <div class="button-container">
+                        <a href="{{ url_for('auth.login') }}">Log In</a>
+                        <a href="{{ url_for('auth.register') }}">Create an Account</a>
+                    </div>
+            </div>
+        </section>
+    </body>
+</html>

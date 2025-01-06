@@ -1,56 +1,85 @@
+/* General Styling */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    padding: 20px;
+    background-color: #f9f9f9;
+    font-family: 'Arial', sans-serif;
+    color: #333;
 }
-h1 {
-    text-align: center;
-}
-form {
-    max-width: 600px;
+
+/* Container */
+.container {
+    max-width: 800px;
     margin: 0 auto;
-    padding: 20px;
-    background-color: white;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
 }
-.form-group {
-    margin-bottom: 15px;
-}
-label {
-    display: block;
-    margin-bottom: 5px;
+
+/* Header Styling */
+h1 {
     font-weight: bold;
+    color: #007bff;
 }
-select, input[type="checkbox"] {
-    width: 100%;
-    padding: 10px;
-    font-size: 16px;
-    margin-bottom: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
+
+p.lead {
+    color: #6c757d;
 }
-button {
-    padding: 10px 20px;
-    font-size: 18px;
-    color: white;
-    background-color: #007bff;
-    border: none;
+
+/* Form Styling */
+form {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+label.form-label {
+    font-weight: 600;
+    color: #495057;
+}
+
+select.form-select {
     border-radius: 5px;
-    cursor: pointer;
-}
-button:hover {
-    background-color: #0056b3;
-}
-.result-container {
-    margin-top: 30px;
-}
-.result-container table {
-    width: 100%;
-    border-collapse: collapse;
-}
-.result-container th, .result-container td {
     padding: 10px;
-    border: 1px solid #ddd;
+    border: 1px solid #ced4da;
+    font-size: 1rem;
+}
+
+/* Checkbox Styling */
+.form-check-label {
+    color: #495057;
+    font-size: 1rem;
+}
+
+/* Buttons */
+.btn-primary, .btn-secondary {
+    font-size: 1.2rem;
+    padding: 10px 30px; 
+    border-radius: 5px;
+}
+
+/* Primary Button (Blue for Run Analysis) */
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #004085;
+}
+
+/* Secondary Button (Gray for Go to Home Page) */
+.btn-secondary {
+    background-color: #6c757d;
+    border-color: #6c757d;
+}
+
+.btn-secondary:hover {
+    background-color: #565e64;
+    border-color: #494e54;
+}
+
+/* Footer Section (Optional) */
+footer {
+    margin-top: 20px;
     text-align: center;
+    font-size: 0.9rem;
+    color: #6c757d;
 }

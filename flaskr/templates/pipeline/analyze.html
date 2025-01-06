@@ -4,56 +4,57 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sequence Analysis</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='ana_style.css') }}">
+    <!-- Optional: Include Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-
-    <h1>Bioinformatics Sequence Analysis</h1>
-    
-    <form action="{{ url_for('pipeline.analyze') }}" method="POST">
-        <!-- Analysis Type -->
-        <div class="form-group">
-            <label for="analysis_type">Select Analysis Type</label>
-            <select name="analysis_type" id="analysis_type" required>
-                <option value="jukes_cantor">Jukes-Cantor Distance</option>
-                <option value="kimura_2p">Kimura 2-Parameter</option>
-                <option value="tamura_3p">Tamura 3-Parameter</option>
-                <option value="p_distance">p-Distance</option>
-            </select>
+    <div class="container mt-5">
+        <div class="text-center mb-4">
+            <h1 class="display-5 text-primary">Bioinformatics Sequence Analysis</h1>
+            <p class="lead text-muted">Analyze your sequences with advanced tools.</p>
         </div>
 
-        <!-- Gap Deletion Option -->
-        <div class="form-group">
-            <label for="gap_deletion">
-                Delete Missing Data Sites (Gap Deletion)
-                <input type="checkbox" name="gap_deletion" id="gap_deletion" checked> 
-                
-            </label>
-        </div>
+        <form action="{{ url_for('pipeline.analyze') }}" method="POST" class="p-4 shadow-lg rounded bg-light">
+            <!-- Analysis Type -->
+            <div class="mb-3">
+                <label for="analysis_type" class="form-label">Select Analysis Type</label>
+                <select name="analysis_type" id="analysis_type" class="form-select" required>
+                    <option value="jukes_cantor">Jukes-Cantor Distance</option>
+                    <option value="kimura_2p">Kimura 2-Parameter</option>
+                    <option value="tamura_3p">Tamura 3-Parameter</option>
+                    <option value="p_distance">p-Distance</option>
+                </select>
+            </div>
 
-        <!-- Graph Type -->
-        <div class="form-group">
-            <label for="graph_type">Select Graph Type</label>
-            <select name="graph_type" id="graph_type" required>
-                <option value="heatmap">Heatmap</option>
-                <option value="dendrogram">Dendrogram</option>
-                <!--option value="amino_a_comp">Amino Acid Composition Plot</option-->
-                <option value="snpeek">SNPeek</option>
-                <!--option value="frequency">Frequency Plot</option-->
-            </select>
-        </div>
+            <!-- Gap Deletion Option -->
+            <div class="mb-3 form-check">
+                <input type="checkbox" name="gap_deletion" id="gap_deletion" class="form-check-input" checked>
+                <label for="gap_deletion" class="form-check-label">Delete Missing Data Sites (Gap Deletion)</label>
+            </div>
 
-        <!-- Submit Button -->
-        <div class="form-group">
-            <button type="submit" class="btn btn-primary">Run Analysis</button>
-        </div>
-    </form>
+            <!-- Graph Type -->
+            <div class="mb-3">
+                <label for="graph_type" class="form-label">Select Graph Type</label>
+                <select name="graph_type" id="graph_type" class="form-select" required>
+                    <option value="heatmap">Heatmap</option>
+                    <option value="dendrogram">Dendrogram</option>
+                    <option value="snpeek">SNPeek</option>
+                </select>
+            </div>
 
-    <!-- Button to go to Base Page -->
-    <div class="form-group">
-        <a href="{{ url_for('auth.dashboard') }}" class="btn btn-secondary">Go to Home Page</a>
+            <!-- Submit Button -->
+            <div class="d-grid mb-3">
+                <button type="submit" class="btn btn-primary btn-lg">Run Analysis</button>
+            </div>
+        </form>
+
+        <!-- Button to go to Base Page -->
+        <div class="text-center mt-4">
+            <a href="{{ url_for('auth.dashboard') }}" class="btn btn-secondary btn-lg">Go to Home Page</a>
+        </div>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

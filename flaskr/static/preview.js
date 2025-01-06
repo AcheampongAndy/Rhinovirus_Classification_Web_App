@@ -1,5 +1,5 @@
- // Function to preview the content of the FASTA file
- document.getElementById('file').addEventListener('change', function(event) {
+// Function to preview the content of the FASTA file
+document.getElementById('file').addEventListener('change', function(event) {
     const file = event.target.files[0];
     if (file) {
         const reader = new FileReader();
