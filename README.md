@@ -82,6 +82,9 @@ This web application was developed as the final project for the completion of th
 ## Contributions
 Contributions are welcome! Please fork the repository and submit a pull request for any improvements or fixes.
 
+## A Video on how to use the WebApp
+https://github.com/user-attachments/assets/d6cb1e58-ac72-422f-8856-996213568aaf
+
 ## Contact
 For questions or support, please contact:
 - **Name**: Acheampong Andrews
